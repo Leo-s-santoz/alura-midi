@@ -1,5 +1,16 @@
-function tocaSom(idElementAudio) {
-  document.querySelector(idElementAudio).play();
+function tocaSom(seletorSom) {
+  const elemento = document.querySelector(seletorSom);
+
+  if (elemento) {
+    console.log("Elemento não encontrado");
+    return;
+  }
+  if (elemento.localName !== "audio") {
+    console.log("Elemento encontrado não é um áudio");
+    return;
+  }
+
+  elemento.play();
 }
 
 const listaDeTeclas = document.querySelectorAll(`.tecla`);
